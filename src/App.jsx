@@ -1,32 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useState, useRef, useEffect } from 'react'
 import './App.css'
+import TabBar from './component/TabBar'
+import Content from './views/Content'
 
+
+// 组件渲染
 function App() {
-  const [count, setCount] = useState(0)
-
+  let tabRef = useRef(null)
+  console.log(tabRef,'tabRef')
+  // 性能优化的话，做的有点早，所以现在就有点难受去尝试
+  useEffect(()=>{
+    // console.log()
+    // console.log(tabRef,'tabRef')
+  })
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Content refs={tabRef} />
+      <TabBar ref={tabRef} />
     </div>
   )
 }

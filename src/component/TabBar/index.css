@@ -1,0 +1,7 @@
+.lk-tab-content {
+    position: absolute;
+    bottom: 12px;
+    /* width: 100vw;两种宽度都可 */
+    /*  fill-available 让这个属性值在所有浏览器都生效 */
+    width: -webkit-fill-available;
+}
