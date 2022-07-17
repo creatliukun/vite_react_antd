@@ -50,6 +50,7 @@ class Canvas {
     //画布宽高
     this.height = config.height;
     this.width = config.width;
+    console.log(config,'config')
 
     //获取画笔
     //fall、bg、fireworks、mb
@@ -113,6 +114,7 @@ class Canvas {
       case 1:
         this.dialogueOpt = null;
         this.dialogue = null;
+        // 清除第一部的画布
         this.dialogueCtx.clearRect(0, 0, config.width, config.height);
         // currentStatus为1时，status为2
         ++this.status;
@@ -138,10 +140,6 @@ class Canvas {
     }
   }
   init() {
-    console.log(this.bgCtx, 'bgCtx')
-    //画背景图
-    this.drawBg(this.bgCtx, this.imgs.bg);
-
     //文字形状maker
     this.shapeMaker = new ShapeMaker(this.width, this.height);
 
@@ -188,6 +186,8 @@ class Canvas {
   }
   //飘落的装饰
   renderFall() {
+    console.log(this.width,'this.width',this.height,'this.height')
+    // 清除画布
     this.fallCtx.clearRect(0, 0, this.width, this.height);
     // 控制飘落装饰类型，飘落雪花还是爱心
     switch (this.fallType) {
@@ -410,29 +410,6 @@ class Canvas {
 
     return dotsArr;
   }
-
-  //画背景
-  drawBg(ctx, img) {
-    const { width, height } = img;
-    const ratio = width / height,
-      wRa = this.width / this.height;
-
-    let sx, sy, sw, sh;
-    if (ratio >= wRa) {
-      // 背景图宽了 裁剪宽度
-      sy = 0, sh = height;
-      sx = (ratio - wRa) * width / 2
-      sw = height * wRa
-    } else if (ratio < wRa) {
-      // 背景图窄了
-      sx = 0, sw = width;
-      sy = (height - width / wRa) / 2;
-      sh = width / wRa;
-    }
-
-    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, this.width, this.height);
-  }
-
 }
 
 export default Canvas

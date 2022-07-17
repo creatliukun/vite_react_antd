@@ -3,7 +3,7 @@ import { Badge, TabBar, Button } from 'antd-mobile'
 // import { DemoBlock } from 'demos'
 import Content from '@/views/Content'
 import Romantic from '@/views/Romantic'
-import Image from '@/views/Image'
+import ObjRun from '@/views/ObjRun'
 import Click from '@/views/Click'
 import Panda from '@/views/Panda'
 import './index.css'
@@ -61,7 +61,7 @@ const LkTabBar =
             <div ref={ref} className='lk-content'>
                 {currentTab == "click" ? <Click currentTab={currentTab} /> : ""}
                 {currentTab == "romantic" ? <Romantic currentTab={currentTab} /> : ""}
-                {currentTab == "image" ? <Image currentTab={currentTab} /> : ""}
+                {currentTab == "image" ? <ObjRun currentTab={currentTab} /> : ""}
                 {currentTab == "panda" ? <Panda currentTab={currentTab} /> : ""}
                 <TabBar className='lk-tab-content' onChange={onChangeTab}>
                     {tabs.map(item => (

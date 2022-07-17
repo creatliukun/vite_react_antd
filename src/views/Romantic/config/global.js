@@ -18,7 +18,7 @@ const config = (function(){
 		width: 375,  //---不建议改动
 		height: 667, //---不建议改动
 		//canvas
-		canvases:['fall', 'bg', 'firework', 'dialogue'],//---不建议改动
+		canvases:['fall',  'firework', 'dialogue'],//---不建议改动
 		// 飘落微粒产生间隔
 		snowInterval: 60,
 		heartInterval: 15,
