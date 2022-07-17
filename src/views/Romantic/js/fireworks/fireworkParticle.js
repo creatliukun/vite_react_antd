@@ -5,9 +5,6 @@ class FireworkParticle extends Particle{
 		super({x,y,size});
 		this.rate = Math.random();
 		this.angle = Math.PI * 2 * Math.random();
-
-		// radius = (1 - Math.pow(Math.random(), 6)) * radius;
-
 		this.vx = radius * Math.cos(this.angle) * this.rate;
 		this.vy = radius * Math.sin(this.angle) * this.rate;
 	}

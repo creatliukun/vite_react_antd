@@ -9,26 +9,6 @@ export default function
         // drawMoreRadians(ctx)
         drawCra(ctx)
     }
-    // 画多个圆弧
-    // const drawMoreRadians = (ctx) => {
-    //     ctx.beginPath();
-    //     ctx.arc(50, 50, 40, 0, Math.PI / 2, false);
-    //     ctx.stroke();
-
-    //     ctx.beginPath();
-    //     ctx.arc(150, 50, 40, 0, -Math.PI / 2, true);
-    //     ctx.closePath();
-    //     ctx.stroke();
-
-    //     ctx.beginPath();
-    //     ctx.arc(50, 150, 40, -Math.PI / 2, Math.PI / 2, false);
-    //     ctx.fill();
-
-    //     ctx.beginPath();
-    //     ctx.arc(150, 150, 40, 0, Math.PI, false);
-    //     ctx.fill();
-    // }
-
     // 碰撞检测
     const drawCra = (ctx) => {
         let x = 100
@@ -39,7 +19,6 @@ export default function
         let w = 375
         let h = 750
         timer = setInterval(() => {
-            console.log(12)
             drawCircle(ctx, x, y, r, w, h)
             if (x - r < 0 || x + r > w) {
                 xSpeed = -xSpeed
@@ -65,6 +44,7 @@ export default function
         canvas = document.getElementById('map');
         let ctx = canvas.getContext('2d');
         draw(ctx)
+        // console.log(window.onmousemove,'window.onmousemove()')
         return () => { clearInterval(timer) }
     }, [])
 
