@@ -1,0 +1,14 @@
+.lk-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.lk-tab-content {
+    position: absolute;
+    bottom: 12px;
+    /* width: 100vw;两种宽度都可 */
+    /*  fill-available 让这个属性值在所有浏览器都生效 */
+    width: -webkit-fill-available;
+    background-color: palegoldenrod;
+    z-index: 999;
+}

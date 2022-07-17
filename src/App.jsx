@@ -1,22 +1,23 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect,Provider } from 'react'
 import './App.css'
-import TabBar from './component/TabBar'
+import TabBar from './layouts/Layout'
 import Content from './views/Content'
+import Layouts from './layouts/Layout'
+
 
 
 // 组件渲染
 function App() {
+  // 父组件管理状态
   let tabRef = useRef(null)
-  console.log(tabRef,'tabRef')
-  // 性能优化的话，做的有点早，所以现在就有点难受去尝试
-  useEffect(()=>{
-    // console.log()
-    // console.log(tabRef,'tabRef')
-  })
+  useEffect(() => {
+    console.log(tabRef?.current?.children[1], 'tabRef')
+  }, [])
   return (
     <div className="App">
-      <Content refs={tabRef} />
-      <TabBar ref={tabRef} />
+      <Layouts ref={tabRef}>
+        {/* <Content /> */}
+      </Layouts>
     </div>
   )
 }
