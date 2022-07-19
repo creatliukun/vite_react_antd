@@ -4,7 +4,8 @@ import { Badge, TabBar, Button } from 'antd-mobile'
 import Content from '@/views/Content'
 import Romantic from '@/views/Romantic'
 import ObjRun from '@/views/ObjRun'
-import Click from '@/views/Click'
+// import Click from '@/views/Click'
+import OtherObj from '@/views/OtherObj'
 import Panda from '@/views/Panda'
 import './index.css'
 import {
@@ -59,7 +60,8 @@ const LkTabBar =
 
         return (
             <div ref={ref} className='lk-content'>
-                {currentTab == "click" ? <Click currentTab={currentTab} /> : ""}
+                {/* {currentTab == "click" ? <Click currentTab={currentTab} /> : ""} */}
+                {currentTab == "click" ? <OtherObj currentTab={currentTab} /> : ""}
                 {currentTab == "romantic" ? <Romantic currentTab={currentTab} /> : ""}
                 {currentTab == "image" ? <ObjRun currentTab={currentTab} /> : ""}
                 {currentTab == "panda" ? <Panda currentTab={currentTab} /> : ""}

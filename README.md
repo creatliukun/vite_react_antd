@@ -334,3 +334,51 @@ clip()
 - setInterval()
 - setTimeout()
 - requestAnimationFrame()
+
+## 在 vite 项目中使用 echarts
+
+### 前言
+
+Ecahrts 是由 canvas 搭建的，所以可以先使用一下 echarts，在自己用 canvas 进行封装一个
+
+- 1，下载 echarts
+
+```bash
+yarn add echarts --save
+
+```
+
+- 2,引入 ECharts
+
+```js
+import * as echarts from "echarts";
+
+// 基于准备好的dom，初始化echarts实例
+var myChart = echarts.init(document.getElementById("main"));
+上面的代码会引入 ECharts 中所有的图表和组件，但是假如你不想引入所有组件，也可以使用 ECharts 提供的按需引入的接口来打包必须的组件。
+// 引入 echarts 核心模块，核心模块提供了 echarts 使用必须要的接口。
+import * as echarts from 'echarts/core';
+// 引入柱状图图表，图表后缀都为 Chart
+import { BarChart } from 'echarts/charts';
+// 引入提示框，标题，直角坐标系，数据集，内置数据转换器组件，组件后缀都为 Component
+// 绘制图表
+myChart.setOption({
+  title: {
+    text: "ECharts 入门示例",
+  },
+  tooltip: {},
+  xAxis: {
+    data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
+  },
+  yAxis: {},
+  series: [
+    {
+      name: "销量",
+      type: "bar",
+      data: [5, 20, 36, 10, 10, 20],
+    },
+  ],
+});
+```
+
+引入 echarts 注意要给 echarts 初始化的盒子加上宽高，不然不会显示

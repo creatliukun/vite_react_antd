@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 
 import './index.css'
 export default function
@@ -7,7 +7,7 @@ export default function
     let canvas
     let ballArr = []
     let timerC
-    let fireWords = '你的眼睛|像星星|美丽|日月冬夏|晴雨山川|欣欣相融|我的眼睛|因为|有你|所以更好'
+    let fireWords = '你的眼睛|像星星|一样美丽|无论冬夏|晴雨山川|一样灿烂|我的眼睛|因为|有你|所以更美'
     let textArr = fireWords.split('|')
     // 0，初始化
     const draw = (ctx) => {
@@ -58,10 +58,11 @@ export default function
     }
     // 设置一个随机数
     const randMod = (number) => {
-        return Math.random() * number
+        return parseInt(Math.random() * number)
     }
     // 1,创建小球
     function Ball() {
+        console.log(this,'ballArr.this')
         this.w = 375
         this.h = 750
         this.x = randMod(5) + 60
